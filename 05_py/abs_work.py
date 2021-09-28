@@ -8,7 +8,7 @@
 # with a modified version of one person's code. We discussed how to extract data
 # from a dictionary, and decided to store the lists contained in the dictionary
 # within a standalone "final" list, from which we could draw a random name. We
-# decided add information to other "final" list in twoo separate lines to improve
+# decided add information to other "final" list in two separate lines to improve
 # readability.
 # DISCOVERIES
 # We discovered that random.randrange was a more efficient way to pick a random
