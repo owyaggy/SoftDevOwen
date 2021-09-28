@@ -1,10 +1,16 @@
 import csv
+import random
 
-data = {}
 
-with open('occupations.csv', newline='') as csvfile:
-    reader = csv.reader(csvfile, delimiter=',')
-    for row in reader:
-        data[row[0]] = row[1];
+def open_csv(fname):
+    data = {}
+    with open(fname, newline='') as f:
+        f.readline()
+        reader = csv.reader(f, delimiter=',')
+        for row in reader:
+            if row[0] not in 'Total':
+                data[float(row[1])] = row[0]
+    return data
 
-print(data)
+
+print(open_csv('occupations.csv'))
