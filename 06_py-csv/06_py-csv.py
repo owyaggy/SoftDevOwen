@@ -1,4 +1,10 @@
+# Goofy Goobers - Oscar Wang, Owen Yaggy, Julia Nelson
+# SoftDev
+# K06 -- Return a random professional field based on the percentage of jobs in that field
+# 2021-09-29
 
+## OUR APPROACH ##
+# We first figured out how to read a CSV
 
 import csv
 import random
