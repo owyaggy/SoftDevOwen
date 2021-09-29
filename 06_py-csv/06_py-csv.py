@@ -4,7 +4,14 @@
 # 2021-09-29
 
 ## OUR APPROACH ##
-# We first figured out how to read a CSV
+# We first figured out how to read a CSV file using the documentation for the csv module
+# After reading the data and storing it in a dictionary, we converted that dictionary to
+# one where the percentages are consecutive sums of all of the percentages of the prior
+# keys in the dictionary. We decided to do this because it allows us to treat the
+# dictionary as one continuous scale, making it easy to randomly pick a point along that
+# scale and associate it with a profession. We divided our program into functions for
+# readability and ease of use. This also allowed us to test our program with a separate
+# function.
 
 import csv
 import random
