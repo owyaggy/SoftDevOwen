@@ -1,4 +1,4 @@
-Swaggy Yaggies
+Swaggy Yaggies - Aaron Contreras, Owen Yaggy, Theo
 SoftDev
 K08 -- QCC for 06_py-csv, where occupations had to be picked based on weighted randomization
 2021-09-30

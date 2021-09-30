@@ -1,3 +1,8 @@
+Swaggy Yaggies - Aaron Contreras, Owen Yaggy, Theo
+SoftDev
+K08 -- Group discoveries of the command '$ python3 -m venv ~/myherozero'
+2021-09-30
+
 Running the command
     `$ python3 -m venv ~/myherozero`
 creates a python virtual environment in your home directory. It is essentially an isolated location in which Python
