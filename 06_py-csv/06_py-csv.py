@@ -84,11 +84,15 @@ def picker():
 # if the outcomes of what was picked match their probabilities, will not be run
 # in final code
 def test_probs(n):
+    # reads the csv file and stores its data in a dictionary using prebuilt function, stores total percent
     testResults, total = openCSV('occupations.csv')
+    # loop through keys and set their counters to 0
     for i in testResults:
         testResults[i] = 0
+    # run n trials - each time key (a profession) is returned increment its value in the dictionary by 1
     for i in range(n):
         testResults[picker()] += 1
+    # loop through dictionary and convert value to a list with the number of times returned and a percentage
     for i in testResults:
         testResults[i] = [testResults[i], round(testResults[i] / n * 10000) / 100]
     print(testResults)
