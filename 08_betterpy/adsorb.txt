@@ -1,0 +1,18 @@
+Swaggy Yaggies
+SoftDev
+K08 -- QCC for 06_py-csv, where occupations had to be picked based on weighted randomization
+2021-09-30
+
+
+QUESTIONS:
+We noticed in Christopher's code that the symbol "->" was used in relation to object types, does this continuously update the object type of the variable?
+
+COMMENTS
+The random choices function was used instead of random.random(), this took three parameters, the choices, a list of weights, and number of chosen values.
+
+To limit the number of decimal points, one group multiplied the percentage by 10.
+
+In the random weighted selection, some groups addded the weight values till they were greater than the random number, and other groups subtracted from the randomly generated number. However, both achieved the same result.
+
+CONCERNS
+When using gitbash to edit files

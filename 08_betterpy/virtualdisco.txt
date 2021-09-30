@@ -1,0 +1,20 @@
+Running the command
+    `$ python3 -m venv ~/myherozero`
+creates a python virtual environment in your home directory. It is essentially an isolated location in which Python
+code can be stored and run. The "venv" refers to "virtual environment", and once created, it contains everything needed
+for configuration, including a bin folder, activate scripts, and a config file.
+
+One of the benefits of a virtual environment is the ability to install packages to just that environment, without any
+effects on the Python installed on your system as a whole. However, installing packages requires first activating the
+virtual environment, accomplished by changing your directory to the virtual environment and in a terminal, entering the
+command `$ source bin/activate`. This takes advantage of the files created by the original command. You can run the
+command `$ deactivate` to leave the virtual environment.
+
+Furthermore, virtual environments make it possible for different applications to use different python versions and sets
+of installed packages. Overall, what is created by the command '$ python3 -m venv ~/myherozero' is a very useful tool
+that can make managing anything that uses Python significantly easier and neater.
+
+Sources:
+1 https://docs.python.org/3/library/venv.html
+2 https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment
+3 https://docs.python.org/3/tutorial/venv.html
