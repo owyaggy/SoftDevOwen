@@ -15,4 +15,5 @@ To limit the number of decimal points, one group multiplied the percentage by 10
 In the random weighted selection, some groups addded the weight values till they were greater than the random number, and other groups subtracted from the randomly generated number. However, both achieved the same result.
 
 CONCERNS
-When using gitbash to edit files
+When choosing a random category, one group titled the additional 0.2% 'Unemployed'. The idea of creating an other section is creative,
+however the total data refers to employed people.
