@@ -3,18 +3,26 @@ SoftDev
 K09 -- Learn about Python virtual environments and flask apps through application experience
 2021-10-4
 
+To Note:
+- This simple program actually creates a basic webpage featuring only
+  the plain text contained in the return statement of the hello_world()
+  function!
+
 Q0: Where have you seen similar syntax in other langs?
--
+- We have seen similar syntax for casting the type of an object in Java
 
 Q1: What points of reference do you have for meaning of '/'?
 - Because it is used in the context of routing, '/' may refer to the symbol that marks the path from one directory to
-  another
+  another. It is also used in urls.
 
 Q2: Where will this print to? Q3: What will it print?
--
+- This will print the name of the module to the terminal
+- After running, we found that it actually prints "__main__" to the terminal
 
 Q3: Will this appear anywhere? How u know?
--
+- No, because the function hello_world() will not be called
+- After running, we found that "No hablo queso!" will appear on the web page served
+  by the IP address this program runs on
 
 Q4: Where have you seen similar constructs in other languages?
--
+- This is a similar construct to Java to run a function of an object.
