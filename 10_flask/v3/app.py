@@ -5,7 +5,8 @@
 # OBSERVATIONS
 # This program is the same as v2, with the exception of app.debug being TRUE
 # This means that as we make changes in the code, the live website will update
-# NOTE: It actually prints "app" instead of "__main__"
+# NOTE: It actually prints "app" instead of "__main__", and the debug feature
+# means the live website will update if code is changed IFF webpage is reloaded
 
 from flask import Flask
 app = Flask(__name__) #create instance of class Flask

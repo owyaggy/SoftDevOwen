@@ -5,6 +5,7 @@
 # OBSERVATIONS
 # We predict this will output "the __name__ of this module is... __main__" to the terminal
 # it will also create a webpage with the text "No hablo queso!"
+# the debug feature means the live website will update if code is changed IFF webpage is reloaded
 
 from flask import Flask
 app = Flask(__name__) #create instance of class Flask
