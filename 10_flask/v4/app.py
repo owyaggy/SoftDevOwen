@@ -2,6 +2,10 @@
 # SoftDev
 # Oct 2021
 
+# OBSERVATIONS
+# We predict this will output "the __name__ of this module is... __main__" to the terminal
+# it will also create a webpage with the text "No hablo queso!"
+
 from flask import Flask
 app = Flask(__name__) #create instance of class Flask
 

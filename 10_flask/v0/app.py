@@ -2,6 +2,10 @@
 # SoftDev
 # Oct 2021
 
+# OBSERVATIoNS
+# We predict that "__main__" will be outputted to the terminal
+# This will create a webpage with the text "No hablo queso!"
+
 from flask import Flask
 app = Flask(__name__) # Q0: Where have you seen similar syntax in other langs?
 
