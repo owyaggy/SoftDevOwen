@@ -92,8 +92,8 @@ def test_probs(n):
 
 @app.route("/")
 def hello_world():
-    text = f'''
-    <b>Your randomized output:</b> {picker()}'''
+    text = f'<b>Your randomized output:</b> {picker()}'
+    print("Displayed random output successfully")
     return text
 
 
