@@ -89,19 +89,26 @@ def test_probs(n):
         testResults[i] = [testResults[i], round(testResults[i] / n * 10000) / 100]
     print(testResults)
 
-
-@app.route("/")
-def hello_world():
-    text = f'<b>Your randomized output:</b> {picker()}'
-    print("Displayed random output successfully")
+def getList():
+    dict, total = openCSV('occupations.csv')
+    text = '''<ul>'''
+    for i in dict:
+        text += f"<li>{i}</li>"
+    text += "</ul>"
     return text
 
 
-def main():
-    hello_world()
-    # test_probs(10000)
+@app.route("/")
+def hello_world():
+    occupations = getList()
+    html = f'''
+    Goofy Goobers - Oscar Wang, Owen Yaggy, Julia Nelson
+    <br><b>Your randomized output:</b> {picker()}
+    <br><br>List of all applications:
+    {getList()}
+    '''
+    print("Displayed random output successfully")
+    return html
 
-# ensures that the not every previous function will have to run before the main one
-# (which should be called first
-if __name__ == "__main__":
-    main()
+
+app.run()
