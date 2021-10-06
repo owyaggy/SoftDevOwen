@@ -14,5 +14,6 @@ Observations for app.py:
 - when run using the `flask run` command, terminal output shows name of module as 'app'
 - when using the `python3 app.py` cmmand, terminal output shows name of module as '__main__'
 
-Obersvations for fixie.html:
+Observations for fixie.html:
 - runs the same as foo.html
+- if the doctype is not included in the filename the browser will try to download the file onto your machine
