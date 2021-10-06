@@ -1,0 +1,18 @@
+Goofy Goobers: Julia Nelson, Oscar Wang, Owen Yaggy
+SoftDev
+K11: Some Things Never Change
+2021-10-16
+
+Obervations for foo:
+- booting up localhost:5000 prompted Firefox to download the .txt file
+
+Observations for foo.html:
+- booting up localhost:5000 loaded the contents of foo.html into a webpage
+
+Observations for app.py:
+- runs the same as 10_flask/v4/app.py
+- when run using the `flask run` command, terminal output shows name of module as 'app'
+- when using the `python3 app.py` cmmand, terminal output shows name of module as '__main__'
+
+Obersvations for fixie.html:
+- runs the same as foo.html
