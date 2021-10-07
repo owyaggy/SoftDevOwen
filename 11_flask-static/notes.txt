@@ -1,19 +1,17 @@
 Goofy Goobers: Julia Nelson, Oscar Wang, Owen Yaggy
 SoftDev
 K11: Some Things Never Change
-2021-10-16
-
-Obervations for foo:
-- booting up localhost:5000 prompted Firefox to download the .txt file
-
-Observations for foo.html:
-- booting up localhost:5000 loaded the contents of foo.html into a webpage
+2021-10-06
 
 Observations for app.py:
-- runs the same as 10_flask/v4/app.py
-- when run using the `flask run` command, terminal output shows name of module as 'app'
-- when using the `python3 app.py` cmmand, terminal output shows name of module as '__main__'
+- app.py runs the same as v4 from K10
+- using `$ flask run` in the terminal prints "app" as the name of the file of the python file
+- using `$ python3 app.py` in the app's directory displays "__main__" as the name of the file 
 
-Observations for fixie.html:
-- runs the same as foo.html
-- if the doctype is not included in the filename the browser will try to download the file onto your machine
+Observations for foo:
+- booting up localhost:5000 prompted FireFox to download the .txt file
+- the file ending serves only as a wrapper and helps the operating system determine what application should be used to open the file
+- cat FILENAME allows you to quickly determine the contents of a file, you can also open it with an editor
+
+Observations for foo.html:
+- booting up localost:5000 loaded the contents of foo.html as a webpage
