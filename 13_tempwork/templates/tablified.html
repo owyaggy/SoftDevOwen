@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+Unicorns - Lucas Tom Wong (LTW), Owen Yaggy, Justin Morrill
+SoftDev
+K13 -- Template for Success/Flask Template Usage/Uses Flask and Templates to display occupations on an html page
+2021-10-13
+ -->
+
+<html>
+
+<head>
+    <title> {{t}} </title>
+</head>
+
+<body>
+    <h2>Unicorns - Lucas Tom Wong (LTW), Owen Yaggy, Justin Morrill</h2>
+    <table style="border:1px solid black;text-align:left">
+        <tr>
+            <th>{{t}}</th>
+        </tr>
+        <tr>
+            <td>{{c}}</td>
+        </tr>
+    </table>
+    <br>
+    <table style="border:1px solid black;text-align:left;border-collapse:collapse">
+        <tr>
+            <th style="border:1px solid black">Occupation</th>
+            <th style="border:1px solid black">Weight</th>
+            <th style="border:1px solid black">Link</th>
+        </tr>
+        {% for item in o %}
+        <tr>
+            <td>{{ item }}</td>
+            <td>{{ o[item][0] }}</td>
+            <td><a href={{ o[item][1] }}>Learn more</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
