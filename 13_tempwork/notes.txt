@@ -1,0 +1,12 @@
+# Unicorns - Lucas Tom-Wong (LTW), Owen Yaggy, Justin Morrill
+# SoftDev
+# K13 -- Template for Success/Flask Template Usage/Uses Flask and Templates to display occupations on an html page
+# 2021-10-8
+
+app.py contains code copied from 06_py-occupations.py
+adapted to be used in app.py
+uses templates to print from localhost
+route is /occupyflaskst
+template is tablified.html inside of /Templates
+determines formatting of webpage
+occupations.csv is located inside /data
