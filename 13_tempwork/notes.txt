@@ -10,3 +10,8 @@ route is /occupyflaskst
 template is tablified.html inside of /Templates
 determines formatting of webpage
 occupations.csv is located inside /data
+
+EGO
+- cognitive dissonance caused by writing one's programs independently makes it harder to find and resolve problems
+- when more people understand code, it is easier for them to see if it is achieving its goal and identify problems
+- it is important not to see flaws in a program as attacks on oneself; the solution is to work (egolessly) with others
