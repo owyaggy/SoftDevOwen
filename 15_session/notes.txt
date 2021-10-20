@@ -1,0 +1,7 @@
+Notable Things:
+Cookies are marked as "session" cookies by a client's browser if they do not have an "expires" key and a value describing when it should expire. Cookies with an expires flag are
+persistent cookies
+
+Flask cryptographically signs session cookies to prevent the cookies from being changed
+
+Source for Python exceptions: Learning Python 5th edition, by Mark Lutz
