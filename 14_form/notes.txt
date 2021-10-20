@@ -1,0 +1,21 @@
+SESSIONS IN FLASK
+* Maintained by SERVER
+* Stored on CLIENT
+* Payload encoded (not encrypted)
+* Dict.
+* Cookie is securely signed
+
+COOKIE
+* Small file given by site, stored locally
+* transmitted w/ request
+
+request.cookies.get('username')
+equiv to
+request.form['username']
+
+*** NEVER STORE YOUR KEY IN A PUB REPO ***
+
+app.secret_key = < randomly generate an ALPHANUMERIC STRING > (e.g. os.urandom(32))
+from flask import session
+session[KEY] = VALUE <-- add session data
+session.pop(KEY) <-- rm session data
