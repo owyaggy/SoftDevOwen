@@ -1,7 +1,7 @@
 # Team Toast
 # Owen Yaggy, Haotian Gan, Justin Morrill
 # SoftDev
-# K15
+# K16 - Write a python program to create a database out of csv files
 # 10-14-2021
 
 import sqlite3   #enable control of an sqlite database
