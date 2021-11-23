@@ -1,0 +1,11 @@
+LoremIpsum: Owen Yaggy, Justin Morrill
+SoftDev pd1
+K19 -- API basics
+2021-11-23
+
+- JSON packages are like dictionaries and can be opened in browser
+- count=1 can be added to the NASA api request to get it to return 1 random image,
+  rather than the image from the day of the request
+- the json including the image also includes a date from which the image was featured
+- if count=1 is used, the json is a list of dictionaries, meaning it must be accessed
+  using an index before any data can be extracted for it (hence the use of [0] in our code)

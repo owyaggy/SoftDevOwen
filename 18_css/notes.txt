@@ -1,0 +1,7 @@
+Owen Yaggy
+SoftDev pd1
+K18 -- CSS basics
+2021-11-23
+
+- CSS block comments are created by /* */ rather than <!-- --> (HTML)
+- float:[left/right] and width:x% are useful css formatting tools

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- LoremIpsum: Owen Yaggy, Justin Morrill
+       SoftDev pd1
+       K18 -- API basics
+       2021-11-23 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESTful APIs</title>
+</head>
+<body>
+<h1 style="text-align:center;">A Random Image From NASA!</h1>
+<h3 style="font-weight:bold; text-align:center">{{ title }}</h3>
+{% if not title %}<p style="color:red;">The image could not be loaded</p>{% endif %}
+<img style="width:50%; display:block; margin-left:auto; margin-right:auto;" src="{{ pic }}" alt="{{ title }}">
+<p>{{ description }}</p>
+<p style="color:gray;">Featured on NASA Image of the Day on {{ date }}. Reload to see a different image.</p>
+</body>
+</html>
