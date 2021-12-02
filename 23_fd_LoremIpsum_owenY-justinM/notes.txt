@@ -1,0 +1,19 @@
+LoremIpsum: Owen Yaggy, Justin Morrill
+SoftDev
+K23 -- No. 2?
+2021-12-02
+time spent: 1
+
+DISCO:
+- Foundation has the same basic tools as Bootstrap
+- More interesting collapse and navbar features require JS
+- There's more information readily available on bootstrap
+
+QCC:
+- based on what we have been given for Foundation, we don't know how to add colors
+
+Q0:
+- No
+
+Q1:
+- Bootstrap, because it provides more easily accessible options, especially for customization
