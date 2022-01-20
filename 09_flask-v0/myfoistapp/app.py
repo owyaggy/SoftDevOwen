@@ -6,4 +6,5 @@ def hello_world():
     print(__name__)  # Q2: Where will this print to? Q3: What will it print?
     return "No hablo queso!"  # Q3: Will this appear anywhere? How u know?
 
-app.run()  # Q4: Where have you seen similar constructs in other languages?
+if __name__ == '__main__':
+    app.run()  # Q4: Where have you seen similar constructs in other languages?
