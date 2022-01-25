@@ -26,6 +26,8 @@ https://www.digitalocean.com/community/tutorials/how-to-build-and-deploy-a-flask
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 
+https://www.digitalocean.com/community/tutorials/how-to-use-an-sqlite-database-in-a-flask-application
+
 cp
 
 scp -r ____ ____
