@@ -1,0 +1,33 @@
+Owen Yaggy
+SoftDev
+K24 -- LAMP and droplets
+2022-01-24
+time spent: ???
+
+NEVER allow ROOT@droplet
+SSH so you don't have to do password authentication
+
+create a new SSH key:
+$ ssh-keygen
+when prompted, enter file in which to save the key (it's name)
+add the public key:
+$ cat ~/.ssh/id_rsa.pub
+
+log into the droplet:
+$ wget -qO- https://repos-droplet.digitalocean.com/install.sh | sudo bash
+
+https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04
+
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-20-04
+
+https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server
+
+https://www.digitalocean.com/community/tutorials/how-to-build-and-deploy-a-flask-application-using-docker-on-ubuntu-20-04
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+
+https://www.digitalocean.com/community/tutorials/how-to-use-an-sqlite-database-in-a-flask-application
+
+cp
+
+scp -r ____ ____

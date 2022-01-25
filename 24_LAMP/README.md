@@ -1,11 +1,17 @@
-## DROPLETS ##
-* Droplet: virtual machine (VM)
-* Allows website hosting
+# how-to :: Setup LAMP on Ubuntu Droplet #
 
-### TODO ###
+## OVERVIEW ##
+* Droplets are virtual machines (VM)
+* They allow remote website hosting
+
+### Estimated Time Cost: 1.5 hours ###
+
+### Prerequisites: ###
 * DigitalOcean credentials
 * GitHub Edu-pack
 * $5/month droplet plan (DO NOT PAY MONEY)
+
+### Follow steps using below documentation: ###
 * Create droplet under Droplets page
 * Use SSH key authentication
 * Install LAMP: Linux, Apache, Sqlite, Python
