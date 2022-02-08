@@ -1,0 +1,18 @@
+Hagrio :: Owen Yaggy, Liesel Wong
+SoftDev pd1
+K27 -- Basic functions in JavaScript
+2022-02-03r
+
+DISCO
+-----------------------------------------------------------------
+* Ooooh, it will run in the browser!!!
+* Aaah-haa!  You have to open the "console" section of the Firefox dev tools...
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* Why semicolons somemtimes needed? Is it common practice to use them?
+* Huh? How do you make JavaScript display on the screen, not just the console?
+* Whuh now? Can you only run JavaScript in a browser?
+=================================================================
+
