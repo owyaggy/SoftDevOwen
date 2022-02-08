@@ -1,32 +1,12 @@
-/*
-   your PPTASK:
-   
-   Test drive each bit of code in this file,
-    and insert comments galore, indicating anything
-     you discover,
-    	have questions about,
-    		or otherwise deem notable.
-    		
-    		Write with your future self or teammates in mind.
-    		
-    		If you find yourself falling out of flow mode, consult 
-    		other teams
-    		MDN
-
-   A few comments have been pre-filled for you...
-   
-   (delete this block comment once you are done)
-*/
-
-// Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon 
-// SoftDev pd0
+// Team Hagrio :: Liesel Wong, Owen Yaggy
+// SoftDev pd1
 // K28 -- Getting more comfortable with the dev console and the DOM
 // 2022-02-08t
 // --------------------------------------------------
 
-
 //send diagnostic output to console
-//(Ctrl-Shift-J in Firefox to reveal console)
+//(Ctrl-Shift-K in Firefox to reveal console)
+// (or command-option-I on Mac)
 console.log("AYO");
 
 let i = "hello";
@@ -51,7 +31,7 @@ let o = { 'name' : 'Thluffy',
           }
         };
 
-
+// allows another list item to be added to the end of the list
 let addItem = function(text) {
   let list = document.getElementById("thelist");
   let newitem = document.createElement("li");
@@ -69,12 +49,13 @@ let removeItem = function(n) {
 let red = function() {
   let items = document.getElementsByTagName("li");
   for(let i = 0; i < items.length; i++) { // loops through all items in list
-    items[i].classList.add('red'); // adds red to the class for that element
-    console.log(items[i].classList);
+    items[i].classList.replace('blue', 'red'); // adds red to the class for that element, but doesn't necessarily change primary color
+      // attempted modifying "add" with "replace"; found somewhat better results
+    //console.log(items[i].classList); // for testing
   }
 };
 
-
+// if functioning, alternates colors of list items between red and blue
 let stripe = function() {
   let items = document.getElementsByTagName("li");
   for(let i = 0; i < items.length; i++) {
@@ -88,5 +69,30 @@ let stripe = function() {
 
 //insert your implementations here for...
 // FIB
+let fib = function fib(n) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n -2)
+}
 // FAC
+let fac = function fac(n) {
+    if (n > 1) return n * fac(n - 1);
+    return n;
+}
 // GCD
+let gcd = function gcd(a, b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
+    if (b == 0) return a;
+    return gcd(b, a % b);
+}
+
+// function to add gcd output to dom
+let showGCD = function showGCD(a, b) {
+    let items = document.body; // assigns the entire document body to a variable
+    let element = document.createElement('h1'); // creates a new h1 tag
+    element.innerHTML = `The gcd of ${a} and ${b} is ${gcd(a, b)}!` // inserts gcd text in that tag
+    items.append(element); // adds that tag to the end of the body (this is what displays it!)
+    return element; // returns the tag (this is for debugging in console!)
+}
+
+showGCD(34, 58); // runs the function to display the gcd

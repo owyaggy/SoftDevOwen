@@ -1,1 +1,19 @@
-https://www.destroyallsoftware.com/talks/wat
+// Team Hagrio :: Liesel Wong, Owen Yaggy
+// SoftDev pd1
+// K28 -- Getting more comfortable with the dev console and the DOM
+// 2022-02-08t
+
+WAT talk: https://www.destroyallsoftware.com/talks/wat
+
+JavaScript notes:
+- Semicolons are good practice and important
+- console.log outputs to console like a print statement
+- Instead of f strings, use `this is text, 2*2 is ${variable}, this is text`
+- Because JavaScript runs in browser, it can access html through `document`
+- document body can be modified by editing classes, items, or adding elements to body
+
+While
+    function gcd(a, b) {...}
+is a valid way to write function in JavaScript, defining them like
+    let gcd = function gcd(a, b) {...}
+allows for greater functionality (the extent of which is not fully clear…)
