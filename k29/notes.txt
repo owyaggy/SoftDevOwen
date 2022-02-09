@@ -1,0 +1,17 @@
+var dasbut = document.getElementById("b"); // "b" is the html id of the button
+
+dasbut.addEventListener('click', fxnName );
+
+document.getElementById(<id>)
+............ElementsByClass(<class>)
+............ElementsByTag(<tag>)
+
+
+document.createElement(<HTML TAG NAME>)
+element.setAttribute(<NAME>, <VALUE>)
+element.getAttribute(<NAME>)
+
+element.remove()
+element.innerHTML
+element.appendChild(<ELEMENT>)
+element.addEventListener(<EVENT>, <FUNCTION>)
