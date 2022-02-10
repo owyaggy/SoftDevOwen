@@ -86,6 +86,24 @@ let gcd = function gcd(a, b) {
     return gcd(b, a % b);
 }
 
+// function to add fib output to dom
+let showFib = function showFib(n) {
+    let items = document.body; // assigns the entire document body to a variable
+    let element = document.createElement('h1'); // creates a new h1 tag
+    element.innerHTML = `Fibonacci number ${n} is ${fib(n)}!` // inserts gcd text in that tag
+    items.append(element); // adds that tag to the end of the body (this is what displays it!)
+    return element; // returns the tag (this is for debugging in console!)
+}
+
+// function to add fac output to dom
+let showFac = function showFac(n) {
+    let items = document.body; // assigns the entire document body to a variable
+    let element = document.createElement('h1'); // creates a new h1 tag
+    element.innerHTML = `The factorial of ${n} is ${fac(n)}!` // inserts gcd text in that tag
+    items.append(element); // adds that tag to the end of the body (this is what displays it!)
+    return element; // returns the tag (this is for debugging in console!)
+}
+
 // function to add gcd output to dom
 let showGCD = function showGCD(a, b) {
     let items = document.body; // assigns the entire document body to a variable
@@ -97,7 +115,23 @@ let showGCD = function showGCD(a, b) {
 
 //showGCD(34, 58); // runs the function to display the gcd
 
-var dasbut = document.getElementById("b"); // "b" is the html id of the button
+let FIBbut = document.getElementById("b1");
+let FACbut = document.getElementById("b2");
+let GCDbut = document.getElementById("b3"); // "b" is the html id of the button
 
 //dasbut.addEventListener('dblclick', showGCD(parseInt(Math.random()* 200), parseInt(Math.random()* 200)));
-dasbut.addEventListener('click', console.log("AYO!"));
+let FIBhelper = function FIBhelper() {
+    return showFib(parseInt(Math.random()* 50));
+}
+
+let FAChelper = function FAChelper() {
+    return showFac(parseInt(Math.random()* 10));
+}
+
+let GCDhelper = function GCDhelper() {
+    return showGCD(parseInt(Math.random()* 200), parseInt(Math.random()* 200));
+}
+
+FIBbut.addEventListener('click', FIBhelper);
+FACbut.addEventListener('click', FAChelper);
+GCDbut.addEventListener('click', GCDhelper);

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<!--
+     Team Epton :: Owen Yaggy, Raymond Yeung
+     SoftDev pd1
+     K29 -- DOMFoolery++
+     2022-02-10
+   --------------------------------------------------
+-->
+
+<html lang="en">
+  <!-- HTML file for exploring JavaScript interactions with the DOM -->
+
+  <head>
+    <meta charset="utf-8">
+    <style>
+        {# NOTE: changed order so CSS specificity would not prevent red function working #}
+      .green {color : #00ff00;}
+      .blue  {color : #0000ff;}
+      .red   {color : #ff0000;}
+      button {
+          background-color:blue; color:white; border-radius:20px; padding:20px; border-color:orange; border-width:5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>
+        Team Epton :: Owen Yaggy, Raymond Yeung<br>
+SoftDev pd1<br>
+K29 -- DOMFoolery++<br>
+2022-02-10
+    </h1>
+
+
+    <button id="b1">Show Fibonacci</button><br>
+    <button id="b2">Show Factorial</button><br>
+    <button id="b3">Show GCD</button><br>
+
+    <script src="dommy_consolery.js"></script>
+
+  </body>
+</html>

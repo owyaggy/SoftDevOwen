@@ -1,3 +1,8 @@
+Team Epton :: Owen Yaggy, Raymond Yeung
+SoftDev pd1
+K29 -- DOMFoolery++
+2022-02-10
+
 var dasbut = document.getElementById("b"); // "b" is the html id of the button
 
 dasbut.addEventListener('click', fxnName );
@@ -15,3 +20,5 @@ element.remove()
 element.innerHTML
 element.appendChild(<ELEMENT>)
 element.addEventListener(<EVENT>, <FUNCTION>)
+- This requires the function to not have any parameters (e.g. ('click', fxnname) rather than ('click', fxnname(a, b))
+- If parameters are needed, fxnname should be a helper function that creates and uses those parameters
