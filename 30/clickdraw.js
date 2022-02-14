@@ -25,6 +25,13 @@ let drawRect = function(e) {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
     console.log("rect mouseclick registered at ", mouseX, mouseY);
+    ctx.beginPath();
+    ctx.moveTo(mouseX, mouseY);
+    ctx.lineTo(mouseX + 50, mouseY);
+    ctx.lineTo(mouseX + 50, mouseY - 100);
+    ctx.lineTo(mouseX, mouseY - 100);
+    ctx.closePath();
+    ctx.stroke();
 }
 
 //var drawCircle = function(e) {
@@ -32,6 +39,11 @@ let drawCircle = (e) => {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
     console.log("circle mouseclick registered at ", mouseX, mouseY);
+    ctx.beginPath();
+    ctx.moveTo(mouseX, mouseY);
+    ctx.arc(mouseX, mouseY, 50, 0, 7);
+    ctx.closePath();
+    ctx.stroke();
 }
 
 //var draw = function(e) {
