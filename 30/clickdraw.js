@@ -10,31 +10,35 @@ let mode = "rect";
 let toggleMode = function (e) {
 //let toggleMode = (e) => {
     console.log("toggling...");
-    if (e.innerHTML == "rect|circ" || e.innerHTML == "Circle") {
-        e.innerHTML = "Rect";
+    console.log(e);
+    if (mode === "rect") {
+        mode = "circ";
+        e.target.innerHTML = "Circle";
     }
     else {
-        e.innerHTML = "Circle";
+        mode = "rect";
+        e.target.innerHTML = "Rect";
     }
 }
 
 let drawRect = function(e) {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
-    console.log("mouseclick registered at ", mouseX, mouseY);
+    console.log("rect mouseclick registered at ", mouseX, mouseY);
 }
 
 //var drawCircle = function(e) {
 let drawCircle = (e) => {
     let mouseX = e.clientX;
     let mouseY = e.clientY;
-    console.log("mouseclick registered at ", mouseX, mouseY);
-
+    console.log("circle mouseclick registered at ", mouseX, mouseY);
 }
 
 //var draw = function(e) {
 let draw = (e) => {
     console.log("...drawing");
+    if (mode === "rect") drawRect(e);
+    if (mode === "circ") drawCircle(e);
 }
 
 //var wipeCanvas = function() {
