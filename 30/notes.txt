@@ -1,0 +1,10 @@
+Team Hagrio :: Liesel Wong, Owen Yaggy
+SoftDev pd1
+K30 -- canvas based JS drawing
+2022-02-14m
+--------------------------------------------------
+
+WAT?
+- something isn't right with the placement of the shapes...
+- ctx.clearRect() is the wipe function
+- e.target.innerHTML is needed, rather than e.innerHTML, to make changes show

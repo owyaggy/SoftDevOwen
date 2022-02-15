@@ -1,3 +1,9 @@
+// Team Hagrio :: Liesel Wong, Owen Yaggy
+// SoftDev pd1
+// K30 -- canvas based JS drawing
+// 2022-02-14m
+// --------------------------------------------------
+
 //retrieve node in DOM via ID
 let c = document.getElementById("slate");
 
@@ -42,6 +48,8 @@ let drawCircle = (e) => {
     ctx.beginPath();
     ctx.moveTo(mouseX, mouseY);
     ctx.arc(mouseX, mouseY, 50, 0, 7);
+    ctx.fillStyle = 'green';
+    ctx.fill()
     ctx.closePath();
     ctx.stroke();
 }
@@ -55,6 +63,7 @@ let draw = (e) => {
 
 //var wipeCanvas = function() {
 let wipeCanvas = () => {
+    ctx.clearRect(0, 0, c.width, c.height);
     console.log("...wiping");
 }
 
