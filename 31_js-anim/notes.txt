@@ -1,0 +1,8 @@
+we are cool at CS
+
+- cancelAnimationFrame parameter is requestID which is returned by requestAnimationFrame
+
+- growing changes direction of circle using true/false
+
+- the parameter for requestAnimationFrame is the function to be called
+
