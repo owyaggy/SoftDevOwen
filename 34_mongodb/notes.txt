@@ -1,0 +1,43 @@
+Owen Yaggy
+SoftDev
+K34 -- Another DB Perspective - MongoDB Intro Video
+2022-04-27
+time spent: 0.7
+
+* Modeling with a tabular database
+1. Define Schema
+2. Develop application and queries
+- Data dictates application
+- Have to work around data
+- Have to restructure, lowering performance
+
+* Modeling with MongoDB
+1. Develop application
+2. Define data model
+3. Improve application -- continually -- > --
+4. Improve data model  -- continually -- > --
+
+* Key Considerations
+- Data model defined at application level
+- Design part of each phase of application lifetime
+- Data model affected by application needs
+
+* Step-by-step iteration
+1. Evaluate application workload
+2. Map out entities and their relationships
+3. Finalize the data model for each collection
+
+* Linking vs. embedding
+- Relationships:
+ - One-to-one
+ - One-to-many
+ - Many-to-many
+
+* Design patterns
+- Schema versioning pattern: add a field for schema version so you can handle different schema versions appropriately
+- Batch updater will update data to new schema
+
+- The Bucket Pattern
+ - Tabular Approach: new document for each sensor reading
+ - Document Approach: new document per time unit per sensor
+

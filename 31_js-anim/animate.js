@@ -34,6 +34,8 @@ var growing = true;
 var drawDot = (e) => {
   console.log("drawDot invoked...");
   clear();
+  console.log(`e: ${e}`)
+  console.log(`id: ${requestID}`)
   if (growing && radius >= 250) {
     growing = false;
   }
@@ -50,6 +52,7 @@ var drawDot = (e) => {
   else {
     radius -= 1; 
   }
+  window.cancelAnimationFrame(requestID);
   requestID = window.requestAnimationFrame(drawDot);
 
   // YOUR CODE HERE

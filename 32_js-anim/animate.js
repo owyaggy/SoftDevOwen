@@ -10,6 +10,7 @@
 var c = document.getElementById("playground");// GET CANVAS
 var dotButton = document.getElementById("buttonCircle");// GET DOT BUTTON
 var stopButton = document.getElementById("buttonStop");// GET STOP BUTTON
+var colorButton = document.getElementById("colorChange")
 
 //prepare to interact with canvas in 2D
 var ctx = c.getContext("2d")// YOUR CODE HERE
@@ -34,6 +35,8 @@ let ypos;
 
 let dvdPlayer = new Image();
 dvdPlayer.src = 'logo_dvd.jpg';
+
+let img = new Image; img.onload = screenSaver; img.src = 'logo_dvd.jpg';
 
 var screenHelper = (e) => {
   xpos = 50 + Math.random() * 350;
@@ -61,9 +64,19 @@ var screenSaver = (e) => {
     ctx.lineTo(xpos, ypos - 50);
     ctx.closePath();
     ctx.stroke();*/
+
   ctx.drawImage(dvdPlayer, xpos, ypos, 100, 100);
+  // draw color
+  ctx.fillStyle = "#09f";
+  ctx.fillRect(0, 0, c.width, c.height);
+  console.log(xpos, ypos, ctx.fillStyle)
+
+  // set composite mode
+  ctx.globalCompositeOperation = "source-in";
+
   //ctx.rect(xpos+5, ypos+20, 87, 60);
   //ctx.stroke();
+
   window.cancelAnimationFrame(requestID);
   requestID = window.requestAnimationFrame(screenSaver);
 
@@ -100,5 +113,10 @@ var stopIt = () => {
   */
 };
 
+var changeColor = (e) => {
+    ctx.style = "filter: invert(24%) sepia(80%) saturate(4195%) hue-rotate(290deg) brightness(117%) contrast(85%);"
+}
+
 dotButton.addEventListener( "click", screenHelper );
 stopButton.addEventListener( "click",  stopIt );
+colorButton.addEventListener("click", changeColor );
