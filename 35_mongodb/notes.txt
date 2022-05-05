@@ -1,0 +1,9 @@
+Owen Yaggy
+SoftDev
+K35 -- Another DB Perspective - Chapter 1
+2022-05-03
+time spent: 0.4
+
+- based on documents and collections
+- very straightforward to create a new cluster
+- logical size of dataset increases
