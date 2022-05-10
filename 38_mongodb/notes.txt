@@ -1,0 +1,183 @@
+Owen Yaggy
+SoftDev
+K35 -- Another DB Perspective - Chapter 4
+2022-05-09
+time spent: 1.7
+
+What is $unset?
+
+Comparison operators
+$eq = equal
+$ne = not equal
+$gt = >
+$lt = <
+$gte = >=
+$lte = <=
+
+{ <field>: { <operator>: <value> } }
+
+$eq is default operator
+
+
+Connect to cluster:
+
+Using terminal:
+	mongosh "mongodb+srv://cluster0.zdkrp.mongodb.net/admin" --apiVersion 1 --username m001-student
+Using built-in-IDE:
+	mongo "mongodb+srv://cluster0.zdkrp.mongodb.net/admin" --username m001-student
+	
+password: m001-mongodb-basics
+
+
+
+Example commands:
+
+db.trips.find({ "tripduration": { "$lte" : 70 },
+                "usertype": { "$ne": "Subscriber" } }).pretty()
+
+db.trips.find({ "tripduration": { "$lte" : 70 },
+                "usertype": { "$eq": "Customer" }}).pretty()
+
+db.trips.find({ "tripduration": { "$lte" : 70 },
+                "usertype": "Customer" }).pretty()
+
+db.zips.find({ "pop": { "$gte": 5000, "$lte": 1000000 }}).count()
+
+
+Logic Operators:
+$and (matches all) ---------\
+$or (matches at least one) --} --> {<operator>: [{statement1},{statement2},...]}
+$nor (matches neither) -----/
+$not (negates query) --> {$not: {statement}}
+
+Implicit $and: $and is used as default operator
+	{sector: "Mobile Food Vendor - 881", result: "Warning"}
+Is same as:
+	{"$and": [{sector: "Mobile Food Vendor - 881"}, {result: "Warning"}]}
+
+- Need to write explicit $and when including same operator more than once in same query
+
+
+
+db.companies.find(
+	{"$or":
+		[
+			{
+				"founded_year": 2004,
+				{"$or": 
+					[{"category_code": "web"}, {"category_code": "social"}]
+				}
+			},
+			{
+				"founded_month": 10,
+				{"$or": 
+					[{"category_code": "web"}, {"category_code": "social"}]
+				}
+			}
+		]
+	}
+).count()
+
+db.companies.find({"$or":[{"founded_year": 2004,"$or":[{"category_code": "web"}, {"category_code": "social"}]},{"founded_month": 10,"$or":[{"category_code": "web"}, {"category_code": "social"}]}]}).count()
+
+
+$expr
+
+Aggregation expressions
+Variables and conditional statements
+
+{ $expr: { <expression> } }
+
+
+
+db.trips.find({ "$expr": { "$eq": [ "$end station id", "$start station id"] }
+              }).count()
+
+
+db.trips.find({ "$expr": { "$and": [ { "$gt": [ "$tripduration", 1200 ]},
+                         { "$eq": [ "$end station id", "$start station id" ]}
+                       ]}}).count()
+
+
+
+
+{"$expr": {
+	"$and": [
+		{ "$gt": ["$tripduration", 1200]},
+		{ "$eq": ["$end station id", "$start station id " ]}
+		]
+	}
+}
+
+
+Array Operators
+$push
+* Add element to array
+* Fails if field not an array
+* Creates new array with value as its element if field does not exist
+
+The query {"amenities": "Shampoo"} means that even if amenities is an array, as long as it contains "Shampoo", it will be found by this query
+
+{"amenities": ["Shampoo"]} means the array has to match exactly
+
+The order of the elements in that array does matter for it to match!
+
+{"amenities": {"$size": 20, "$all": ["Internet", "Wifi",... etc. 
+* Filter by size
+* $all means order doesn't matter, has to contain all listed
+
+
+db.listingsAndReviews.find({"accommodates": {"$gt": 6}, "reviews": {"$size": 50}}).pretty()
+
+db.listingsAndReviews.find({"property_type": "House", "amenities": {"$all": ["Changing table"]}}).count()
+
+
+
+Projection
+db.<collection>.find({ <query> }, { <projection> })
+1 - include field
+0 - exclude field
+Can't mix 1 and 0s, except to exclude "_id" because that is included by default
+
+
+Projection with Arrays
+
+db.grades.find({ "class_id": 431 },
+               { "scores": { "$elemMatch": { "score": { "$gt": 85 } } }
+             }).pretty()
+* Only shows student scores if they are over 85
+
+db.grades.find({ "scores": { "$elemMatch": { "type": "extra credit" } }
+               }).pretty()
+* Only shows students who had an extra credit assignment
+
+
+db.companies.find({ "offices": { "$elemMatch": { "city": "Seattle" } } }).count()
+
+offices[{city:"Seattle"}]
+
+
+
+Use dot notation:
+
+db.companies.find({ "relationships":
+                      { "$elemMatch": { "is_past": true,
+                                        "person.first_name": "Mark" } } },
+                  { "name": 1 }).count()
+
+
+Not sure exactly what $regex does, but it seems like fancy string comparison.
+
+db.companies.find({ "relationships.0.person.first_name": "Mark",
+                    "relationships.0.title": {"$regex": "CEO" } },
+                  { "name": 1 }).pretty()
+
+
+
+db.trips.find({"start station location.coordinates.0": {"$lt": -74}}).count()
+
+db.inspections.find({"address.city": "NEW YORK"}).count()
+
+
+This is very time-consuming.
+

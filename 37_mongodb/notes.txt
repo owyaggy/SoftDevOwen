@@ -1,0 +1,32 @@
+Owen Yaggy
+SoftDev
+K35 -- Another DB Perspective - Chapter 3
+2022-05-09
+time spent: 0.4
+
+db.inspections.insert([ { "test": 1, { "test": 2 }, { "test": 3 } ])
+
+
+{ "ordered": false } to test all insertions
+
+updateOne()
+updateMany()
+
+Update operators:
+{"$inc": {"pop": 10}}
+* increments each of the specified fields by the increment amount
+
+{"$set": {"pop:" 17630}}
+* sets field to indicated value
+
+{"$push: { <field1>: <value1>…}}
+* add to an array
+
+Deleting: (for documents)
+deleteOne()
+deleteMany()
+
+db.collection.drop()
+* gets rid of a collection
+
+show collections
