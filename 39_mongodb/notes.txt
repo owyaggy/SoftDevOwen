@@ -1,0 +1,134 @@
+Owen Yaggy
+SoftDev
+K35 -- Another DB Perspective - Chapter 5
+2022-05-11
+time spent: 1
+
+Aggregation Framework
+- Another way to query data in MongoDB
+
+Example:
+Find all documents that have Wifi as one of the amenities, only including price and address in the resulting cursor
+
+MQL:
+db.listingsAndReviews.find(
+	{"amenities": "Wifi"},
+	{"price": 1, "address": 1, "_id": 0}).pretty()
+
+
+Aggregation framework:
+db.listingsAndReviews.aggregate([
+	{ $match: { "amenities": "Wifi" }},
+	{ $project: { "price": 1, "address": 1, "_id": 0 }}
+	])
+
+*********************************
+|				|
+|	MongoDB Aggregation	|
+|	    Framework		|
+|	    - $group		|
+|	    - $compute		|
+|	    - $reshape		|
+|				|
+|	*****************	|
+|	|	MQL:	|   	|
+|	|    - filter	|	|
+|	|    - update	|	|
+|	*****************	|
+*********************************
+
+
+$group
+- Operator that siphons incoming data into multiple reservoirs
+
+- Non-filtering stages don't modify original data, they work with data in the cursor
+
+Which countries are listed in the sample_airbnb.listingsAndReviews collection?
+
+db.listingsAndReviews.aggregate([ { "$project": { "address": 1, "_id": 0 }},
+                                  { "$group": { "_id": "$address.country" }}])
+
+How many listings does each country have?
+
+db.listingsAndReviews.aggregate([
+                                  { "$project": { "address": 1, "_id": 0 }},
+                                  { "$group": { "_id": "$address.country",
+                                                "count": { "$sum": 1 } } }
+                                ])
+
+
+
+$group + $sum:
+- price for each item in collection added to total for that group
+
+
+Find one document in the collection and only include the address field in the resulting cursor:
+
+db.listingsAndReviews.findOne({ },{ "address": 1, "_id": 0 })
+
+
+What room types are present in the sample_airbnb.listingsAndReviews collection?
+db.listingsAndReviews.findOne({ }, { "room_type": 1, "_id": 0 })
+
+db.listingsAndReviews.aggregate([{ "$project": { "room_type": 1, "_id": 0 }},{ "$group": { "_id": "$room_type" }}])
+
+
+use sample_training
+
+db.zips.find().sort({ "pop": 1 }).limit(1)
+
+db.zips.find({ "pop": 0 }).count()
+
+db.zips.find().sort({ "pop": -1 }).limit(1)
+
+db.zips.find().sort({ "pop": -1 }).limit(10)
+
+db.zips.find().sort({ "pop": 1, "city": -1 })
+
+
+
+db.companies.find({ "founded_year": { "$ne": null }},
+                  { "name": 1, "founded_year": 1 }
+                 ).sort({ "founded_year": 1 }).limit(5)
+
+db.trips.find({ "birth year": { "$ne": null, "$ne": "" }}, {"birth year": -1, "_id": 0}).sort({ "birth year": -1 }).limit(1).pretty()
+
+
+
+Index
+* to support queries
+
+
+db.trips.find({ "birth year": 1989 })
+
+db.trips.find({ "start station id": 476 }).sort( { "birth year": 1 } )
+
+db.trips.createIndex({ "birth year": 1 })
+
+db.trips.createIndex({ "start station id": 1, "birth year": 1 })
+
+
+Update:
+db.collection.updateOne({<query to locate>}, {<update})
+
+- Upset is a hybrid of update and insert
+- Should only be used when needed
+
+db.collection.updateOne({<query>}, {<update>}, {"upsert": true})
+
+If upset is true:
+- Is there a match?
+	- Yes: *Update* the matched document
+	- No: *Insert* a new document
+
+
+
+Upsert
+
+db.iot.updateOne({ "sensor": r.sensor, "date": r.date,
+                   "valcount": { "$lt": 48 } },
+                         { "$push": { "readings": { "v": r.value, "t": r.time } },
+                        "$inc": { "valcount": 1, "total": r.value } },
+                 { "upsert": true })
+
+Phew
