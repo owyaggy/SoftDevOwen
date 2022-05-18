@@ -1,0 +1,7 @@
+Owen Yaggy
+SoftDev
+K35 -- Another DB Perspective - Chapter 5
+2022-05-18
+time spent: 0.5
+
+* You can do a lot of the aggregation in the Data Explorer
